@@ -72,15 +72,14 @@ export default function Header() {
           ))}
         </ul>
 
-        {/* Bouton Réserver une table - Vert Olive / Beige clair sans aucun doré */}
-        <div className="flex items-center gap-3">
-          <a
-            href={`tel:${restaurantInfo.phone.replace(/\s/g, '')}`}
-            className="hidden sm:flex items-center gap-2.5 bg-olive-950 text-beige-50 font-bold text-sm py-2.5 px-5 rounded-full border-2 border-olive-950 hover:bg-beige-50 hover:text-olive-950 hover:border-olive-950 shadow-md transition-all duration-300 group"
-          >
-            <Phone className="w-4 h-4 text-beige-50 group-hover:text-olive-950 transition-colors duration-300" />
-            <span>Réserver une table</span>
-          </a>
+        {/* Bouton Réserver une table - Vert Olive foncé & Texte Beige (Aucun masquage au hover) */}
+        <a
+          href={`tel:${restaurantInfo.phone.replace(/\s/g, '')}`}
+          className="hidden sm:flex items-center gap-2 bg-olive-950 hover:bg-olive-900 text-beige-50 font-bold text-sm py-2.5 px-5 rounded-full border border-olive-800 shadow-md transition-colors duration-200"
+        >
+          <Phone className="w-4 h-4 text-beige-50" />
+          <span className="text-beige-50">Réserver une table</span>
+        </a>
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
