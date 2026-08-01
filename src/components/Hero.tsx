@@ -48,7 +48,7 @@ export default function Hero() {
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up [animation-delay:400ms] opacity-0">
           <a href="#localisation" className="btn-gold w-full sm:w-auto">
             <MapPin className="w-5 h-5" />
-            Nous Trouver
+            Venir Nous Voir
           </a>
         </div>
 
