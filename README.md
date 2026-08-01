@@ -18,7 +18,7 @@ Ce site web repose sur des technologies web modernes et performantes :
 
 * **Frontend :** React, TypeScript, Tailwind CSS
 * **Build Tool :** Vite
-* **Hébergement & Déploiement :** Vercel *(ou autre plateforme compatible)*
+* **Hébergement & Déploiement :** Vercel
 
 ---
 
