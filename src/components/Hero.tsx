@@ -7,21 +7,17 @@ export default function Hero() {
       id="accueil"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background image avec calque Vert Olive feutré (ombrage ciblé au centre) */}
+      {/* Background image avec calque Vert Olive feutré */}
       <div className="absolute inset-0">
         <img
           src={heroImage}
           alt="Le Gatsby restaurant ambiance"
           className="w-full h-full object-cover"
         />
-        {/* Calque de contraste Vert Olive très sombre au centre pour détacher le texte */}
+        {/* Calque de contraste Vert Olive très sombre au centre */}
         <div className="absolute inset-0 bg-gradient-to-b from-olive-950/90 via-olive-950/75 to-beige-100" />
         <div className="absolute inset-0 bg-black/40" />
       </div>
-
-      {/* Frame décorative Art Déco */}
-      <div className="absolute inset-4 sm:inset-6 lg:inset-10 border border-amber-400/20 pointer-events-none" />
-      <div className="absolute inset-5 sm:inset-7 lg:inset-11 border border-amber-400/10 pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 section-padding text-center pt-24 pb-16 max-w-5xl mx-auto">
@@ -33,11 +29,10 @@ export default function Hero() {
           </span>
         </div>
 
-        {/* Headline avec contraste optimal */}
+        {/* Headline */}
         <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.15] text-white drop-shadow-md animate-fade-in-up">
           L'Élégance et la Gourmandise
           <br />
-          {/* Dégradé doré éclatant avec ombre portante spécifique pour detacher le texte */}
           <span className="inline-block mt-2 bg-gradient-to-r from-amber-200 via-amber-300 to-amber-100 bg-clip-text text-transparent filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
             au Cœur de Casablanca
           </span>
