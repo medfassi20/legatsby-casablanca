@@ -8,7 +8,6 @@ export default function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background image */}
-      {/* src="/images/hero-gatsby.jpg" // REPLACE WITH YOUR ACTUAL HERO PHOTO */}
       <div className="absolute inset-0">
         <img
           src={heroImage}
