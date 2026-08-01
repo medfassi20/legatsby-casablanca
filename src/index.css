@@ -9,42 +9,61 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply font-sans bg-charcoal-900 text-cream-100 antialiased;
+    @apply font-sans bg-beige-50 text-beige-900 antialiased;
   }
   ::selection {
-    @apply bg-gold-500 text-charcoal-900;
+    @apply bg-olive-500 text-white;
   }
 }
 
 @layer components {
   .font-serif {
-    font-family: '"Playfair Display"', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
   }
-  .gold-text {
-    @apply text-gold-500;
+  
+  /* Image de fond Hero avec calque vert olive */
+  .hero-bg-picture {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(38, 48, 21, 0.70), 
+        rgba(85, 107, 47, 0.50)
+      ),
+      url('/images/picture.png');
+    background-size: cover;
+    background-position: center;
   }
+
+  .olive-text {
+    @apply text-olive-500;
+  }
+
   .gold-gradient-text {
-    background: linear-gradient(135deg, #D4AF37 0%, #F59E0B 50%, #D4AF37 100%);
+    background: linear-gradient(135deg, #556B2F 0%, #35431D 50%, #556B2F 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shimmer 3s linear infinite;
   }
+
   .section-padding {
     @apply px-5 sm:px-8 lg:px-16 xl:px-24;
   }
+
   .btn-gold {
-    @apply inline-flex items-center justify-center gap-2 bg-gold-500 text-charcoal-900 font-semibold px-7 py-3.5 rounded-full transition-all duration-300 hover:bg-gold-400 hover:shadow-lg hover:shadow-gold-500/30 hover:-translate-y-0.5 active:translate-y-0;
+    @apply inline-flex items-center justify-center gap-2 bg-olive-500 text-white font-semibold px-7 py-3.5 rounded-full transition-all duration-300 hover:bg-olive-800 hover:shadow-lg hover:shadow-olive-500/30 hover:-translate-y-0.5 active:translate-y-0;
   }
+
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 border border-gold-500/60 text-gold-500 font-semibold px-7 py-3.5 rounded-full transition-all duration-300 hover:bg-gold-500 hover:text-charcoal-900 hover:border-gold-500 hover:-translate-y-0.5 active:translate-y-0;
+    @apply inline-flex items-center justify-center gap-2 border border-olive-500/60 text-olive-500 font-semibold px-7 py-3.5 rounded-full transition-all duration-300 hover:bg-olive-500 hover:text-white hover:border-olive-500 hover:-translate-y-0.5 active:translate-y-0;
   }
+
   .card-glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
+    @apply bg-beige-100/80 backdrop-blur-md border border-beige-200 rounded-2xl shadow-sm;
   }
+
   .deco-line {
-    @apply h-px w-16 bg-gradient-to-r from-transparent via-gold-500 to-transparent;
+    @apply h-px w-16 bg-gradient-to-r from-transparent via-olive-500 to-transparent;
   }
 }
 
