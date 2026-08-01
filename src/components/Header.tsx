@@ -57,14 +57,14 @@ export default function Header() {
                 }}
                 className={`relative text-base font-semibold tracking-wide transition-colors duration-300 group ${
                   scrolled
-                    ? 'text-olive-900 hover:text-amber-700'
-                    : 'text-beige-50 hover:text-amber-300 drop-shadow-sm'
+                    ? 'text-olive-950 hover:text-olive-700'
+                    : 'text-beige-50 hover:text-white drop-shadow-sm'
                 }`}
               >
                 {link.label}
                 <span
                   className={`absolute -bottom-1 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full ${
-                    scrolled ? 'bg-amber-700' : 'bg-amber-300'
+                    scrolled ? 'bg-olive-950' : 'bg-beige-50'
                   }`}
                 />
               </a>
@@ -72,19 +72,20 @@ export default function Header() {
           ))}
         </ul>
 
+        {/* Bouton Réserver une table - Vert Olive / Beige clair sans aucun doré */}
         <div className="flex items-center gap-3">
-        <a
-          href={`tel:${restaurantInfo.phone.replace(/\s/g, '')}`}
-          className="hidden sm:flex items-center gap-2 bg-white text-olive-950 font-bold text-sm py-2.5 px-5 rounded-full border-2 border-amber-400 shadow-md hover:bg-amber-400 hover:text-olive-950 transition-all duration-300 transform hover:scale-105"
-        >
-          <Phone className="w-4 h-4 text-amber-500 fill-amber-500/20" />
-          <span>Réserver une table</span>
-        </a>
+          <a
+            href={`tel:${restaurantInfo.phone.replace(/\s/g, '')}`}
+            className="hidden sm:flex items-center gap-2.5 bg-olive-950 text-beige-50 font-bold text-sm py-2.5 px-5 rounded-full border-2 border-olive-950 hover:bg-beige-50 hover:text-olive-950 hover:border-olive-950 shadow-md transition-all duration-300 group"
+          >
+            <Phone className="w-4 h-4 text-beige-50 group-hover:text-olive-950 transition-colors duration-300" />
+            <span>Réserver une table</span>
+          </a>
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className={`lg:hidden p-2 transition-colors ${
-              scrolled ? 'text-olive-950 hover:text-amber-700' : 'text-white hover:text-amber-300'
+              scrolled ? 'text-olive-950 hover:text-olive-800' : 'text-white hover:text-beige-200'
             }`}
             aria-label="Menu"
           >
@@ -118,10 +119,10 @@ export default function Header() {
           </ul>
           <a
             href={`tel:${restaurantInfo.phone.replace(/\s/g, '')}`}
-            className="flex items-center justify-center gap-2 w-full mt-4 bg-olive-950 text-beige-50 font-bold py-3 px-5 rounded-full shadow-md"
+            className="flex items-center justify-center gap-2 w-full mt-4 bg-olive-950 text-beige-50 font-bold py-3 px-5 rounded-full shadow-md hover:bg-olive-900 transition-colors"
           >
-            <Phone className="w-4 h-4 text-amber-400" />
-            <span className="text-beige-50">Réserver une table</span>
+            <Phone className="w-4 h-4 text-beige-50" />
+            <span>Réserver une table</span>
           </a>
         </div>
       </div>
