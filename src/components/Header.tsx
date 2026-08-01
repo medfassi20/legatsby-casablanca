@@ -66,13 +66,12 @@ export default function Header() {
 
         {/* CTA + Mobile toggle */}
         <div className="flex items-center gap-3">
-          {/* Bouton Réserver bien visible en Doré */}
           <a
             href={`tel:${restaurantInfo.phone.replace(/\s/g, '')}`}
-            className="hidden sm:flex items-center gap-2 bg-gradient-to-r from-amber-300 via-amber-400 to-amber-300 text-olive-950 font-bold text-sm py-2.5 px-5 rounded-full shadow-md hover:shadow-amber-400/20 hover:scale-105 transition-all duration-300"
+            className="hidden sm:flex items-center gap-2 bg-olive-950 hover:bg-olive-900 text-beige-50 font-semibold text-sm py-2.5 px-5 rounded-full border border-amber-400/40 shadow-lg transition-all duration-300"
           >
-            <Phone className="w-4 h-4 fill-olive-950 text-olive-950" />
-            Réserver une table
+          <Phone className="w-4 h-4 text-amber-300" />
+            <span>Réserver une table</span>
           </a>
 
           <button
