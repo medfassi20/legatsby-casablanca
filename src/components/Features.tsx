@@ -26,16 +26,16 @@ const iconMap = {
 
 export default function Features() {
   return (
-    <section id="apropos" className="relative py-24 lg:py-32 bg-beige-50">
+    <section id="apropos" className="relative py-24 lg:py-32 bg-beige-100">
       {/* Section header */}
       <div className="text-center max-w-2xl mx-auto section-padding mb-16">
-        <span className="text-xs font-semibold tracking-widest uppercase text-olive-500">
+        <span className="text-xs font-bold tracking-widest uppercase text-olive-700">
           Pourquoi nous choisir
         </span>
-        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 text-beige-900">
+        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 text-beige-950">
           Une Expérience d'Exception
         </h2>
-        <div className="deco-line mx-auto mt-6" />
+        <div className="w-16 h-0.5 bg-olive-600 mx-auto mt-6" />
       </div>
 
       {/* Feature cards */}
@@ -45,17 +45,20 @@ export default function Features() {
           return (
             <div
               key={feature.title}
-              className="group card-glass p-8 lg:p-10 text-center hover:border-olive-500/30 transition-all duration-500 hover:-translate-y-1.5 animate-fade-in-up opacity-0"
-              style={{ animationDelay: `${idx * 150}ms` }}
+              className="group bg-white/90 backdrop-blur-md border border-beige-300/80 rounded-2xl p-8 lg:p-10 text-center shadow-sm hover:shadow-md hover:border-olive-500/50 transition-all duration-300 hover:-translate-y-1"
             >
               {/* Icon */}
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-olive-500/10 border border-olive-500/20 mb-6 group-hover:bg-olive-500/20 group-hover:scale-110 transition-all duration-500">
-                {Icon && <Icon className="w-7 h-7 text-olive-500" />}
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-olive-900/10 border border-olive-700/20 mb-6 group-hover:bg-olive-900 transition-all duration-300">
+                {Icon && <Icon className="w-7 h-7 text-olive-800 group-hover:text-beige-100 transition-colors" />}
               </div>
-              <h3 className="font-serif text-xl lg:text-2xl font-semibold text-beige-900 mb-3">
+
+              {/* Titre ultra-lisible */}
+              <h3 className="font-serif text-xl lg:text-2xl font-bold text-beige-950 mb-3">
                 {feature.title}
               </h3>
-              <p className="text-beige-900/70 text-sm lg:text-base leading-relaxed">
+
+              {/* Texte de description bien contrasté */}
+              <p className="text-beige-800 text-sm lg:text-base leading-relaxed font-normal">
                 {feature.description}
               </p>
             </div>
