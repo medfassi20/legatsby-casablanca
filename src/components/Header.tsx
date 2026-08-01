@@ -22,11 +22,11 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-beige-50/90 backdrop-blur-xl border-b border-beige-200 py-3 shadow-sm text-beige-900'
-          : 'bg-transparent py-5 text-white'
+          ? 'bg-olive-950/90 backdrop-blur-md border-b border-olive-800/50 py-3 shadow-lg text-beige-50'
+          : 'bg-gradient-to-b from-black/80 via-black/40 to-transparent py-5 text-white'
       }`}
     >
-      <nav className="section-padding flex items-center justify-between">
+      <nav className="section-padding max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <a
           href="#accueil"
@@ -36,12 +36,12 @@ export default function Header() {
           }}
           className="group flex items-center gap-2"
         >
-          <span className="font-serif text-2xl sm:text-3xl font-bold tracking-wide">
-            <span className={scrolled ? 'text-olive-500' : 'text-white'}>Le Gatsby</span>
+          <span className="font-serif text-2xl sm:text-3xl font-bold tracking-wide text-white drop-shadow">
+            Le Gatsby
           </span>
         </a>
 
-        {/* Desktop Nav */}
+        {/* Desktop Nav - Liens agrandis et mieux contrastés */}
         <ul className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.href}>
@@ -51,12 +51,14 @@ export default function Header() {
                   e.preventDefault();
                   handleNavClick(link.href);
                 }}
-                className={`relative text-sm font-medium transition-colors duration-300 group ${
-                  scrolled ? 'text-beige-900/80 hover:text-olive-500' : 'text-beige-100 hover:text-white'
+                className={`relative text-base font-semibold tracking-wide transition-colors duration-300 drop-shadow-sm group ${
+                  scrolled
+                    ? 'text-beige-100 hover:text-amber-300'
+                    : 'text-beige-50 hover:text-amber-300'
                 }`}
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-olive-500 transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-amber-300 transition-all duration-300 group-hover:w-full" />
               </a>
             </li>
           ))}
@@ -64,16 +66,18 @@ export default function Header() {
 
         {/* CTA + Mobile toggle */}
         <div className="flex items-center gap-3">
+          {/* Bouton Réserver bien visible en Doré */}
           <a
             href={`tel:${restaurantInfo.phone.replace(/\s/g, '')}`}
-            className="hidden sm:flex btn-gold text-sm py-2.5 px-5"
+            className="hidden sm:flex items-center gap-2 bg-gradient-to-r from-amber-300 via-amber-400 to-amber-300 text-olive-950 font-bold text-sm py-2.5 px-5 rounded-full shadow-md hover:shadow-amber-400/20 hover:scale-105 transition-all duration-300"
           >
-            <Phone className="w-4 h-4" />
+            <Phone className="w-4 h-4 fill-olive-950 text-olive-950" />
             Réserver une table
           </a>
+
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`lg:hidden p-2 transition-colors ${scrolled ? 'text-olive-500' : 'text-white'}`}
+            className="lg:hidden p-2 text-white hover:text-amber-300 transition-colors"
             aria-label="Menu"
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -87,7 +91,7 @@ export default function Header() {
           mobileOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="section-padding pt-4 pb-6 bg-beige-50/95 backdrop-blur-xl border-t border-beige-200">
+        <div className="section-padding pt-4 pb-6 bg-olive-950/95 backdrop-blur-xl border-t border-olive-800/50">
           <ul className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <li key={link.href}>
@@ -97,7 +101,7 @@ export default function Header() {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  className="block py-3 px-4 rounded-lg text-beige-900 hover:text-olive-500 hover:bg-beige-100 transition-all duration-300"
+                  className="block py-3 px-4 rounded-lg text-beige-100 font-medium hover:text-amber-300 hover:bg-olive-900/50 transition-all duration-300"
                 >
                   {link.label}
                 </a>
@@ -106,9 +110,9 @@ export default function Header() {
           </ul>
           <a
             href={`tel:${restaurantInfo.phone.replace(/\s/g, '')}`}
-            className="btn-gold w-full mt-4"
+            className="flex items-center justify-center gap-2 w-full mt-4 bg-gradient-to-r from-amber-300 to-amber-400 text-olive-950 font-bold py-3 px-5 rounded-full shadow-md"
           >
-            <Phone className="w-4 h-4" />
+            <Phone className="w-4 h-4 fill-olive-950 text-olive-950" />
             Réserver une table
           </a>
         </div>
