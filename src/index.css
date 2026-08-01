@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans bg-charcoal-900 text-cream-100 antialiased;
+  }
+  ::selection {
+    @apply bg-gold-500 text-charcoal-900;
+  }
+}
+
+@layer components {
+  .font-serif {
+    font-family: '"Playfair Display"', Georgia, serif;
+  }
+  .gold-text {
+    @apply text-gold-500;
+  }
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #D4AF37 0%, #F59E0B 50%, #D4AF37 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+  }
+  .section-padding {
+    @apply px-5 sm:px-8 lg:px-16 xl:px-24;
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 bg-gold-500 text-charcoal-900 font-semibold px-7 py-3.5 rounded-full transition-all duration-300 hover:bg-gold-400 hover:shadow-lg hover:shadow-gold-500/30 hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border border-gold-500/60 text-gold-500 font-semibold px-7 py-3.5 rounded-full transition-all duration-300 hover:bg-gold-500 hover:text-charcoal-900 hover:border-gold-500 hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .card-glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
+  }
+  .deco-line {
+    @apply h-px w-16 bg-gradient-to-r from-transparent via-gold-500 to-transparent;
+  }
+}
+
+@layer utilities {
+  .text-shadow-lg {
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
