@@ -1,6 +1,6 @@
 export const restaurantInfo = {
   name: 'Le Gatsby',
-  tagline: 'L\'Elégance et la Gourmandise au Cœur de Casablanca, Maroc',
+  tagline: 'L\'Elégance et la Gourmandise au Cœur de Casablanca',
   address: 'Angle boulevard Sidi Mohamed Ben Abdellah et, Bd Sour Jdid, Casablanca 20020, Maroc',
   addressShort: 'Bd Sour Jdid, Casablanca 20020, Maroc',
   phone: '+212 7 00 11 01 10',
@@ -11,7 +11,7 @@ export const restaurantInfo = {
   mapsUrl: 'https://www.google.com/maps/place/Le+Gatsby/@33.6075822,-7.6298412,17z/data=!3m1!4b1!4m6!3m5!1s0xda7d329c2db4511:0x6ab1882aa194a034!8m2!3d33.6075822!4d-7.6298412!16s%2Fg%2F11fhr0x1vj?entry=ttu&g_ep=EgoyMDI2MDcyOS4wIKXMDSoASAFQAw%3D%3D',
   mapsEmbed:
     'https://www.google.com/maps?q=Le+Gatsby&output=embed',
-  copyright: `© ${new Date().getFullYear()} Le Gatsby Casablanca, Maroc. Tous droits réservés.`,
+  copyright: `© ${new Date().getFullYear()} Le Gatsby. Tous droits réservés.`,
 };
 
 export const navLinks = [
