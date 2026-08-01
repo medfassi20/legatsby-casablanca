@@ -22,8 +22,8 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-charcoal-900/80 backdrop-blur-xl border-b border-gold-500/10 py-3 shadow-lg shadow-black/20'
-          : 'bg-transparent py-5'
+          ? 'bg-beige-50/90 backdrop-blur-xl border-b border-beige-200 py-3 shadow-sm text-beige-900'
+          : 'bg-transparent py-5 text-white'
       }`}
     >
       <nav className="section-padding flex items-center justify-between">
@@ -37,7 +37,7 @@ export default function Header() {
           className="group flex items-center gap-2"
         >
           <span className="font-serif text-2xl sm:text-3xl font-bold tracking-wide">
-            <span className="gold-gradient-text">Le Gatsby</span>
+            <span className={scrolled ? 'text-olive-500' : 'text-white'}>Le Gatsby</span>
           </span>
         </a>
 
@@ -51,10 +51,12 @@ export default function Header() {
                   e.preventDefault();
                   handleNavClick(link.href);
                 }}
-                className="relative text-sm font-medium text-cream-100/80 hover:text-gold-500 transition-colors duration-300 group"
+                className={`relative text-sm font-medium transition-colors duration-300 group ${
+                  scrolled ? 'text-beige-900/80 hover:text-olive-500' : 'text-beige-100 hover:text-white'
+                }`}
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold-500 transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 h-px w-0 bg-olive-500 transition-all duration-300 group-hover:w-full" />
               </a>
             </li>
           ))}
@@ -71,7 +73,7 @@ export default function Header() {
           </a>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 text-gold-500 hover:text-gold-400 transition-colors"
+            className={`lg:hidden p-2 transition-colors ${scrolled ? 'text-olive-500' : 'text-white'}`}
             aria-label="Menu"
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -85,7 +87,7 @@ export default function Header() {
           mobileOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="section-padding pt-4 pb-6 bg-charcoal-900/95 backdrop-blur-xl border-t border-gold-500/10">
+        <div className="section-padding pt-4 pb-6 bg-beige-50/95 backdrop-blur-xl border-t border-beige-200">
           <ul className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <li key={link.href}>
@@ -95,7 +97,7 @@ export default function Header() {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  className="block py-3 px-4 rounded-lg text-cream-100/90 hover:text-gold-500 hover:bg-white/5 transition-all duration-300"
+                  className="block py-3 px-4 rounded-lg text-beige-900 hover:text-olive-500 hover:bg-beige-100 transition-all duration-300"
                 >
                   {link.label}
                 </a>
