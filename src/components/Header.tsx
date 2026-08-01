@@ -72,15 +72,14 @@ export default function Header() {
           ))}
         </ul>
 
-        {/* Bouton Réserver une table - Correction Lisibilité */}
         <div className="flex items-center gap-3">
-          <a
-            href={`tel:${restaurantInfo.phone.replace(/\s/g, '')}`}
-            className="hidden sm:flex items-center gap-2.5 bg-olive-950 hover:bg-black text-beige-50 font-bold text-sm py-2.5 px-6 rounded-full border border-amber-400/40 shadow-lg transition-all duration-300 hover:scale-105"
-          >
-            <Phone className="w-4 h-4 text-amber-400 shrink-0" />
-            <span className="text-beige-50 whitespace-nowrap">Réserver une table</span>
-          </a>
+        <a
+          href={`tel:${restaurantInfo.phone.replace(/\s/g, '')}`}
+          className="hidden sm:flex items-center gap-2 bg-white text-olive-950 font-bold text-sm py-2.5 px-5 rounded-full border-2 border-amber-400 shadow-md hover:bg-amber-400 hover:text-olive-950 transition-all duration-300 transform hover:scale-105"
+        >
+          <Phone className="w-4 h-4 text-amber-500 fill-amber-500/20" />
+          <span>Réserver une table</span>
+        </a>
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
