@@ -22,7 +22,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-beige-50/95 backdrop-blur-md border-b border-olive-900/10 py-3 shadow-md'
+          ? 'bg-[#f8f6f0] backdrop-blur-md border-b border-black/10 py-3 shadow-md'
           : 'bg-gradient-to-b from-black/80 via-black/40 to-transparent py-5'
       }`}
     >
@@ -38,7 +38,7 @@ export default function Header() {
         >
           <span
             className={`font-serif text-2xl sm:text-3xl font-bold tracking-wide transition-colors duration-300 ${
-              scrolled ? 'text-olive-950' : 'text-white drop-shadow'
+              scrolled ? 'text-[#1c2417]' : 'text-white drop-shadow'
             }`}
           >
             Le Gatsby
@@ -57,14 +57,14 @@ export default function Header() {
                 }}
                 className={`relative text-base font-semibold tracking-wide transition-colors duration-300 group ${
                   scrolled
-                    ? 'text-olive-950 hover:text-olive-700'
-                    : 'text-beige-50 hover:text-white drop-shadow-sm'
+                    ? 'text-[#1c2417] hover:text-[#5c6b48]'
+                    : 'text-[#f5f2eb] hover:text-white drop-shadow-sm'
                 }`}
               >
                 {link.label}
                 <span
                   className={`absolute -bottom-1 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full ${
-                    scrolled ? 'bg-olive-950' : 'bg-beige-50'
+                    scrolled ? 'bg-[#1c2417]' : 'bg-[#f5f2eb]'
                   }`}
                 />
               </a>
@@ -72,19 +72,20 @@ export default function Header() {
           ))}
         </ul>
 
-        {/* Bouton Réserver une table - Vert Olive Foncé / Texte Beige Clair contrasté */}
-        <a
-          href={`tel:${restaurantInfo.phone.replace(/\s/g, '')}`}
-          className="hidden sm:flex items-center gap-2 bg-olive-950 hover:bg-black text-beige-50 font-bold text-sm py-2.5 px-5 rounded-full border border-olive-800 shadow-lg transition-all duration-300"
-        >
-          <Phone className="w-4 h-4 text-beige-50 shrink-0" />
-          <span className="text-beige-50 font-bold whitespace-nowrap">Réserver une table</span>
-        </a>
+        {/* Bouton Réserver une table (Vert Olive Très Sombre + Texte Crème Clair) */}
+        <div className="flex items-center gap-3">
+          <a
+            href={`tel:${restaurantInfo.phone.replace(/\s/g, '')}`}
+            className="hidden sm:flex items-center gap-2 bg-[#1c2417] hover:bg-black text-[#f5f2eb] font-bold text-sm py-2.5 px-5 rounded-full border border-[#2d3a25] shadow-lg transition-all duration-300"
+          >
+            <Phone className="w-4 h-4 text-[#f5f2eb] shrink-0" />
+            <span className="text-[#f5f2eb] font-bold whitespace-nowrap">Réserver une table</span>
+          </a>
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className={`lg:hidden p-2 transition-colors ${
-              scrolled ? 'text-olive-950 hover:text-olive-800' : 'text-white hover:text-beige-200'
+              scrolled ? 'text-[#1c2417]' : 'text-white'
             }`}
             aria-label="Menu"
           >
@@ -99,7 +100,7 @@ export default function Header() {
           mobileOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="section-padding pt-4 pb-6 bg-beige-50/98 backdrop-blur-xl border-t border-olive-900/10 shadow-lg">
+        <div className="section-padding pt-4 pb-6 bg-[#f8f6f0] backdrop-blur-xl border-t border-black/10 shadow-lg">
           <ul className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <li key={link.href}>
@@ -109,7 +110,7 @@ export default function Header() {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  className="block py-3 px-4 rounded-lg text-olive-950 font-semibold hover:bg-olive-900/10 transition-all duration-300"
+                  className="block py-3 px-4 rounded-lg text-[#1c2417] font-semibold hover:bg-black/5 transition-all duration-300"
                 >
                   {link.label}
                 </a>
@@ -118,9 +119,9 @@ export default function Header() {
           </ul>
           <a
             href={`tel:${restaurantInfo.phone.replace(/\s/g, '')}`}
-            className="flex items-center justify-center gap-2 w-full mt-4 bg-olive-950 text-beige-50 font-bold py-3 px-5 rounded-full shadow-md hover:bg-olive-900 transition-colors"
+            className="flex items-center justify-center gap-2 w-full mt-4 bg-[#1c2417] text-[#f5f2eb] font-bold py-3 px-5 rounded-full shadow-md"
           >
-            <Phone className="w-4 h-4 text-beige-50" />
+            <Phone className="w-4 h-4 text-[#f5f2eb]" />
             <span>Réserver une table</span>
           </a>
         </div>
