@@ -72,13 +72,13 @@ export default function Header() {
           ))}
         </ul>
 
-        {/* Bouton Réserver une table - Vert Olive foncé & Texte Beige (Aucun masquage au hover) */}
+        {/* Bouton Réserver une table - Vert Olive Foncé / Texte Beige Clair contrasté */}
         <a
           href={`tel:${restaurantInfo.phone.replace(/\s/g, '')}`}
-          className="hidden sm:flex items-center gap-2 bg-olive-950 hover:bg-olive-900 text-beige-50 font-bold text-sm py-2.5 px-5 rounded-full border border-olive-800 shadow-md transition-colors duration-200"
+          className="hidden sm:flex items-center gap-2 bg-olive-950 hover:bg-black text-beige-50 font-bold text-sm py-2.5 px-5 rounded-full border border-olive-800 shadow-lg transition-all duration-300"
         >
-          <Phone className="w-4 h-4 text-beige-50" />
-          <span className="text-beige-50">Réserver une table</span>
+          <Phone className="w-4 h-4 text-beige-50 shrink-0" />
+          <span className="text-beige-50 font-bold whitespace-nowrap">Réserver une table</span>
         </a>
 
           <button
