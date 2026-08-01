@@ -27,7 +27,7 @@ export default function Header() {
       }`}
     >
       <nav className="section-padding max-w-7xl mx-auto flex items-center justify-between">
-        {/* Logo - Blanc sur le Hero, Vert Olive foncé au scroll */}
+        {/* Logo */}
         <a
           href="#accueil"
           onClick={(e) => {
@@ -45,7 +45,7 @@ export default function Header() {
           </span>
         </a>
 
-        {/* Desktop Nav Links - Blancs sur Hero, Vert Olive foncé au scroll */}
+        {/* Desktop Nav Links */}
         <ul className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.href}>
@@ -72,18 +72,14 @@ export default function Header() {
           ))}
         </ul>
 
-        {/* Bouton Réserver une table */}
+        {/* Bouton Réserver une table - Correction Lisibilité */}
         <div className="flex items-center gap-3">
           <a
             href={`tel:${restaurantInfo.phone.replace(/\s/g, '')}`}
-            className={`hidden sm:flex items-center gap-2 font-bold text-sm py-2.5 px-5 rounded-full transition-all duration-300 shadow-md ${
-              scrolled
-                ? 'bg-olive-950 text-beige-50 hover:bg-olive-900 border border-olive-900'
-                : 'bg-olive-900 text-beige-50 hover:bg-olive-800 border border-amber-400/40'
-            }`}
+            className="hidden sm:flex items-center gap-2.5 bg-olive-950 hover:bg-black text-beige-50 font-bold text-sm py-2.5 px-6 rounded-full border border-amber-400/40 shadow-lg transition-all duration-300 hover:scale-105"
           >
-            <Phone className="w-4 h-4 text-amber-400" />
-            <span>Réserver une table</span>
+            <Phone className="w-4 h-4 text-amber-400 shrink-0" />
+            <span className="text-beige-50 whitespace-nowrap">Réserver une table</span>
           </a>
 
           <button
@@ -126,7 +122,7 @@ export default function Header() {
             className="flex items-center justify-center gap-2 w-full mt-4 bg-olive-950 text-beige-50 font-bold py-3 px-5 rounded-full shadow-md"
           >
             <Phone className="w-4 h-4 text-amber-400" />
-            <span>Réserver une table</span>
+            <span className="text-beige-50">Réserver une table</span>
           </a>
         </div>
       </div>
