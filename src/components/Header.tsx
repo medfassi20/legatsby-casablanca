@@ -7,7 +7,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -20,14 +20,14 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-olive-950/90 backdrop-blur-md border-b border-olive-800/50 py-3 shadow-lg text-beige-50'
-          : 'bg-gradient-to-b from-black/80 via-black/40 to-transparent py-5 text-white'
+          ? 'bg-olive-950/95 backdrop-blur-md border-b border-olive-800/60 py-3 shadow-xl'
+          : 'bg-gradient-to-b from-black/80 via-black/40 to-transparent py-5'
       }`}
     >
       <nav className="section-padding max-w-7xl mx-auto flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo - Toujours blanc brillant */}
         <a
           href="#accueil"
           onClick={(e) => {
@@ -41,7 +41,7 @@ export default function Header() {
           </span>
         </a>
 
-        {/* Desktop Nav - Liens agrandis et mieux contrastés */}
+        {/* Desktop Nav - Liens toujours clairs et bien visibles */}
         <ul className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.href}>
@@ -51,11 +51,7 @@ export default function Header() {
                   e.preventDefault();
                   handleNavClick(link.href);
                 }}
-                className={`relative text-base font-semibold tracking-wide transition-colors duration-300 drop-shadow-sm group ${
-                  scrolled
-                    ? 'text-beige-100 hover:text-amber-300'
-                    : 'text-beige-50 hover:text-amber-300'
-                }`}
+                className="relative text-base font-semibold tracking-wide text-beige-100 hover:text-amber-300 transition-colors duration-300 drop-shadow-sm group"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-amber-300 transition-all duration-300 group-hover:w-full" />
@@ -66,11 +62,12 @@ export default function Header() {
 
         {/* CTA + Mobile toggle */}
         <div className="flex items-center gap-3">
+          {/* Bouton Réserver : Fond sombre + bordure dorée + texte beige clair */}
           <a
             href={`tel:${restaurantInfo.phone.replace(/\s/g, '')}`}
-            className="hidden sm:flex items-center gap-2 bg-olive-950 hover:bg-olive-900 text-beige-50 font-semibold text-sm py-2.5 px-5 rounded-full border border-amber-400/40 shadow-lg transition-all duration-300"
+            className="hidden sm:flex items-center gap-2 bg-olive-900 hover:bg-olive-800 text-beige-50 font-bold text-sm py-2.5 px-5 rounded-full border border-amber-400/50 shadow-md transition-all duration-300"
           >
-          <Phone className="w-4 h-4 text-amber-300" />
+            <Phone className="w-4 h-4 text-amber-400" />
             <span>Réserver une table</span>
           </a>
 
@@ -86,7 +83,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-400 ${
+        className={`lg:hidden overflow-hidden transition-all duration-300 ${
           mobileOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
@@ -109,7 +106,7 @@ export default function Header() {
           </ul>
           <a
             href={`tel:${restaurantInfo.phone.replace(/\s/g, '')}`}
-            className="flex items-center justify-center gap-2 w-full mt-4 bg-gradient-to-r from-amber-300 to-amber-400 text-olive-950 font-bold py-3 px-5 rounded-full shadow-md"
+            className="flex items-center justify-center gap-2 w-full mt-4 bg-amber-400 text-olive-950 font-bold py-3 px-5 rounded-full shadow-md"
           >
             <Phone className="w-4 h-4 fill-olive-950 text-olive-950" />
             Réserver une table
