@@ -6,13 +6,13 @@
 
 ---
 
-## 🚀 À Propos du Projet
+## 🚀 À Propos du Projet :
 
 Ce projet est une application web moderne développée pour offrir une vitrine digitale élégante, rapide et responsive au restaurant **Le Gatsby**. Le site met en valeur l'ambiance feutrée, la décoration Art Déco et le cadre tropical chic de l'établissement à travers une galerie photo immersive et des informations pratiques optimisées pour le référencement local (SEO).
 
 ---
 
-## 🛠️ Stack Technique
+## 🛠️ Stack Technique :
 
 Ce site web repose sur des technologies web modernes et performantes :
 
@@ -22,7 +22,7 @@ Ce site web repose sur des technologies web modernes et performantes :
 
 ---
 
-## ✨ Fonctionnalités Clés
+## ✨ Fonctionnalités Clés :
 
 * **Design Immersif & Élégant :** Interface aux tons sombres et dorés reflétant l'identité visuelle haut de gamme du restaurant.
 * **Galerie Photo Dynamique (Masonry) :** Mise en valeur des différents espaces (terrasse vitrée, étage lounge, salle principale) sans perte de format.
@@ -32,10 +32,10 @@ Ce site web repose sur des technologies web modernes et performantes :
 
 ---
 
-## ⚙️ Installation & Lancement en Local
+## ⚙️ Installation & Lancement en Local :
 
 Pour lancer le projet sur votre machine, suivez ces étapes :
 
 1. **Cloner le repository :**
    ```bash
-   git clone [https://github.com/votre-nom-utilisateur/legatsby-casablanca.git](https://github.com/votre-nom-utilisateur/legatsby-casablanca.git)
+   git clone https://github.com/votre-nom-utilisateur/legatsby-casablanca.git
